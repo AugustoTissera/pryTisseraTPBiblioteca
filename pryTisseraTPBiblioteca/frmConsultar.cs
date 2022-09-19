@@ -20,9 +20,29 @@ namespace pryTisseraTPBiblioteca
 
         private void frmConsultar_Load(object sender, EventArgs e)
         {
-            StreamReader srLibros = new StreamReader("./LIBRO.txt");
 
             
+        }
+
+        private void lblResEditorial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            int f, c = 0;
+            string[,] matLibro = new string[21, 5];
+            
+            if (File.Exists("./LIBRO.txt") == true)
+            {
+                StreamReader srTodos = new StreamReader("./LIBRO.txt");
+                while (!srTodos.EndOfStream)
+                {
+                    string[] vecLibro = srTodos.ReadLine().Split(',');
+
+                }
+            }
         }
     }
 }
