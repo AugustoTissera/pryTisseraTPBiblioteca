@@ -36,19 +36,19 @@
             this.colDistribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbTodos = new System.Windows.Forms.GroupBox();
             this.gpbUno = new System.Windows.Forms.GroupBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblResCodigo = new System.Windows.Forms.Label();
-            this.lblResLibro = new System.Windows.Forms.Label();
-            this.lblResEditorial = new System.Windows.Forms.Label();
-            this.lblResAutor = new System.Windows.Forms.Label();
-            this.lblResDistribuidor = new System.Windows.Forms.Label();
-            this.lblAutor = new System.Windows.Forms.Label();
-            this.lblEditorial = new System.Windows.Forms.Label();
-            this.lblLibro = new System.Windows.Forms.Label();
-            this.lblDistribuidor = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
+            this.lblDistribuidor = new System.Windows.Forms.Label();
+            this.lblLibro = new System.Windows.Forms.Label();
+            this.lblEditorial = new System.Windows.Forms.Label();
+            this.lblAutor = new System.Windows.Forms.Label();
+            this.lblResDistribuidor = new System.Windows.Forms.Label();
+            this.lblResAutor = new System.Windows.Forms.Label();
+            this.lblResEditorial = new System.Windows.Forms.Label();
+            this.lblResLibro = new System.Windows.Forms.Label();
+            this.lblResCodigo = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.btnConsultar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grlLibros)).BeginInit();
             this.gpbTodos.SuspendLayout();
             this.gpbUno.SuspendLayout();
@@ -124,32 +124,79 @@
             this.gpbUno.TabStop = false;
             this.gpbUno.Text = "Consultar uno";
             // 
-            // lblCodigo
+            // btnAnterior
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(20, 33);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(43, 13);
-            this.lblCodigo.TabIndex = 0;
-            this.lblCodigo.Text = "Código:";
+            this.btnAnterior.Location = new System.Drawing.Point(435, 143);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
+            this.btnAnterior.TabIndex = 4;
+            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
-            // lblResCodigo
+            // btnSiguiente
             // 
-            this.lblResCodigo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblResCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResCodigo.Location = new System.Drawing.Point(94, 32);
-            this.lblResCodigo.Name = "lblResCodigo";
-            this.lblResCodigo.Size = new System.Drawing.Size(98, 23);
-            this.lblResCodigo.TabIndex = 1;
+            this.btnSiguiente.Location = new System.Drawing.Point(435, 63);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.TabIndex = 5;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
-            // lblResLibro
+            // lblDistribuidor
             // 
-            this.lblResLibro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblResLibro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResLibro.Location = new System.Drawing.Point(94, 72);
-            this.lblResLibro.Name = "lblResLibro";
-            this.lblResLibro.Size = new System.Drawing.Size(284, 23);
-            this.lblResLibro.TabIndex = 2;
+            this.lblDistribuidor.AutoSize = true;
+            this.lblDistribuidor.Location = new System.Drawing.Point(20, 193);
+            this.lblDistribuidor.Name = "lblDistribuidor";
+            this.lblDistribuidor.Size = new System.Drawing.Size(62, 13);
+            this.lblDistribuidor.TabIndex = 9;
+            this.lblDistribuidor.Text = "Distribuidor:";
+            // 
+            // lblLibro
+            // 
+            this.lblLibro.AutoSize = true;
+            this.lblLibro.Location = new System.Drawing.Point(20, 73);
+            this.lblLibro.Name = "lblLibro";
+            this.lblLibro.Size = new System.Drawing.Size(33, 13);
+            this.lblLibro.TabIndex = 8;
+            this.lblLibro.Text = "Libro:";
+            // 
+            // lblEditorial
+            // 
+            this.lblEditorial.AutoSize = true;
+            this.lblEditorial.Location = new System.Drawing.Point(20, 113);
+            this.lblEditorial.Name = "lblEditorial";
+            this.lblEditorial.Size = new System.Drawing.Size(47, 13);
+            this.lblEditorial.TabIndex = 7;
+            this.lblEditorial.Text = "Editorial:";
+            // 
+            // lblAutor
+            // 
+            this.lblAutor.AutoSize = true;
+            this.lblAutor.Location = new System.Drawing.Point(20, 153);
+            this.lblAutor.Name = "lblAutor";
+            this.lblAutor.Size = new System.Drawing.Size(35, 13);
+            this.lblAutor.TabIndex = 6;
+            this.lblAutor.Text = "Autor:";
+            // 
+            // lblResDistribuidor
+            // 
+            this.lblResDistribuidor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblResDistribuidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResDistribuidor.Location = new System.Drawing.Point(94, 152);
+            this.lblResDistribuidor.Name = "lblResDistribuidor";
+            this.lblResDistribuidor.Size = new System.Drawing.Size(284, 23);
+            this.lblResDistribuidor.TabIndex = 5;
+            // 
+            // lblResAutor
+            // 
+            this.lblResAutor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblResAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResAutor.Location = new System.Drawing.Point(94, 112);
+            this.lblResAutor.Name = "lblResAutor";
+            this.lblResAutor.Size = new System.Drawing.Size(284, 23);
+            this.lblResAutor.TabIndex = 4;
             // 
             // lblResEditorial
             // 
@@ -161,59 +208,32 @@
             this.lblResEditorial.TabIndex = 3;
             this.lblResEditorial.Click += new System.EventHandler(this.lblResEditorial_Click);
             // 
-            // lblResAutor
+            // lblResLibro
             // 
-            this.lblResAutor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblResAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResAutor.Location = new System.Drawing.Point(94, 112);
-            this.lblResAutor.Name = "lblResAutor";
-            this.lblResAutor.Size = new System.Drawing.Size(284, 23);
-            this.lblResAutor.TabIndex = 4;
+            this.lblResLibro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblResLibro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResLibro.Location = new System.Drawing.Point(94, 72);
+            this.lblResLibro.Name = "lblResLibro";
+            this.lblResLibro.Size = new System.Drawing.Size(284, 23);
+            this.lblResLibro.TabIndex = 2;
             // 
-            // lblResDistribuidor
+            // lblResCodigo
             // 
-            this.lblResDistribuidor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblResDistribuidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResDistribuidor.Location = new System.Drawing.Point(94, 152);
-            this.lblResDistribuidor.Name = "lblResDistribuidor";
-            this.lblResDistribuidor.Size = new System.Drawing.Size(284, 23);
-            this.lblResDistribuidor.TabIndex = 5;
+            this.lblResCodigo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblResCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResCodigo.Location = new System.Drawing.Point(94, 32);
+            this.lblResCodigo.Name = "lblResCodigo";
+            this.lblResCodigo.Size = new System.Drawing.Size(98, 23);
+            this.lblResCodigo.TabIndex = 1;
             // 
-            // lblAutor
+            // lblCodigo
             // 
-            this.lblAutor.AutoSize = true;
-            this.lblAutor.Location = new System.Drawing.Point(20, 153);
-            this.lblAutor.Name = "lblAutor";
-            this.lblAutor.Size = new System.Drawing.Size(35, 13);
-            this.lblAutor.TabIndex = 6;
-            this.lblAutor.Text = "Autor:";
-            // 
-            // lblEditorial
-            // 
-            this.lblEditorial.AutoSize = true;
-            this.lblEditorial.Location = new System.Drawing.Point(20, 113);
-            this.lblEditorial.Name = "lblEditorial";
-            this.lblEditorial.Size = new System.Drawing.Size(47, 13);
-            this.lblEditorial.TabIndex = 7;
-            this.lblEditorial.Text = "Editorial:";
-            // 
-            // lblLibro
-            // 
-            this.lblLibro.AutoSize = true;
-            this.lblLibro.Location = new System.Drawing.Point(20, 73);
-            this.lblLibro.Name = "lblLibro";
-            this.lblLibro.Size = new System.Drawing.Size(33, 13);
-            this.lblLibro.TabIndex = 8;
-            this.lblLibro.Text = "Libro:";
-            // 
-            // lblDistribuidor
-            // 
-            this.lblDistribuidor.AutoSize = true;
-            this.lblDistribuidor.Location = new System.Drawing.Point(20, 193);
-            this.lblDistribuidor.Name = "lblDistribuidor";
-            this.lblDistribuidor.Size = new System.Drawing.Size(62, 13);
-            this.lblDistribuidor.TabIndex = 9;
-            this.lblDistribuidor.Text = "Distribuidor:";
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(20, 33);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(43, 13);
+            this.lblCodigo.TabIndex = 0;
+            this.lblCodigo.Text = "Código:";
             // 
             // btnConsultar
             // 
@@ -224,24 +244,6 @@
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
-            // btnAnterior
-            // 
-            this.btnAnterior.Location = new System.Drawing.Point(435, 143);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
-            this.btnAnterior.TabIndex = 4;
-            this.btnAnterior.Text = "Anterior";
-            this.btnAnterior.UseVisualStyleBackColor = true;
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.Location = new System.Drawing.Point(435, 63);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
-            this.btnSiguiente.TabIndex = 5;
-            this.btnSiguiente.Text = "Siguiente";
-            this.btnSiguiente.UseVisualStyleBackColor = true;
             // 
             // frmConsultar
             // 
