@@ -21,15 +21,16 @@ namespace pryTisseraTPBiblioteca
             InitializeComponent();
             
 
-            if (File.Exists("./LIBRO.txt") == true)
+            if (File.Exists("./LIBRO.txt") == true) // Preguntamos si el archivo existe
             {
                 
-                StreamReader srTodos = new StreamReader("./LIBRO.txt");
+                StreamReader srTodos = new StreamReader("./LIBRO.txt"); // Generamos la lectura del archivo principal
                 
                 while (!srTodos.EndOfStream)
                 {
                     string[] vecLibro = srTodos.ReadLine().Split(',');
 
+                    // Buscamos el código de editorial en su archivo y extraemos el nombre
                     StreamReader srEditorial = new StreamReader("./EDITORIAL.txt");
                     while (!srEditorial.EndOfStream)
                     {
@@ -38,11 +39,12 @@ namespace pryTisseraTPBiblioteca
                         if (vecEditorial[0] == vecLibro[2])
                         {
                             vecLibro[2] = vecEditorial[1];
-                            break;
+                            break; // Una vez encontrado, salimos del while
                         }
                     }
                     srEditorial.Close();
 
+                    // Buscamos el código de distribuidor en su archivo y extraemos el nombre
                     StreamReader srDistribuidor = new StreamReader("./DISTRIBUIDORA.txt");
                     while (!srDistribuidor.EndOfStream)
                     {
@@ -50,11 +52,12 @@ namespace pryTisseraTPBiblioteca
                         if (vecDistribuidor[0] == vecLibro[4])
                         {
                             vecLibro[4] = vecDistribuidor[1];
-                            break;
+                            break; // Una vez encontrado, salimos del while
                         }
                     }
                     srDistribuidor.Close();
 
+                    // Cargamos en la matríz los datos obtenidos
                     matLibro[f, 0] = vecLibro[0];
                     matLibro[f, 1] = vecLibro[1];  
                     matLibro[f, 2] = vecLibro[2];
@@ -65,29 +68,21 @@ namespace pryTisseraTPBiblioteca
                 srTodos.Close();
                 
             }
+            else // Si no existe el archivo avisamos
+            {
+                MessageBox.Show("ERROR", "Los archivos no se encuentran cargados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-        private void frmConsultar_Load(object sender, EventArgs e)
-        {
-
-            
-        }
-
-        private void lblResEditorial_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             StreamReader srTodos = new StreamReader("./LIBRO.txt");
-            StreamReader srEditorial = new StreamReader("./EDITORIAL.txt");
 
             int i = 0;
-            while (!srTodos.EndOfStream && !srEditorial.EndOfStream)
+            while (!srTodos.EndOfStream)
             {
-                if (i < 21)
+                if (i < 21) // Nos aseguramos que se mantenga en los rangos de la matríz, a trabajar...
                 {
+                    // Cargamos en la grilla los datos de la matríz
                     grlLibros.Rows.Add(matLibro[i, 0],
                     matLibro[i, 1],
                     matLibro[i, 2],
@@ -97,15 +92,11 @@ namespace pryTisseraTPBiblioteca
                 }
                 else
                 {
-                    break;
+                    break; // Una vez llegado al límite de la matríz, salimos del while
                 }
                 
             }
             srTodos.Close();
-            srEditorial.Close();
-
-                
-            
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
@@ -120,7 +111,7 @@ namespace pryTisseraTPBiblioteca
                 lblResDistribuidor.Text = matLibro[i, 4];
                 i++;
             }
-            else
+            else // Vuelve al inicio
             {
                 i = 0;
                 lblResCodigo.Text = matLibro[i, 0];
@@ -142,7 +133,7 @@ namespace pryTisseraTPBiblioteca
                 lblResDistribuidor.Text = matLibro[i, 4];
                 i--;
             }
-            else
+            else // Vuelve al final
             {
                 i = 20;
                 lblResCodigo.Text = matLibro[i, 0];

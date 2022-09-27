@@ -28,5 +28,10 @@ namespace pryTisseraTPBiblioteca
             frmConsultar Consulta = new frmConsultar();
             Consulta.ShowDialog();
         }
+
+        private void msSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

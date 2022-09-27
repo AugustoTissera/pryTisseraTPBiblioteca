@@ -214,7 +214,6 @@
             this.lblResEditorial.Name = "lblResEditorial";
             this.lblResEditorial.Size = new System.Drawing.Size(284, 23);
             this.lblResEditorial.TabIndex = 3;
-            this.lblResEditorial.Click += new System.EventHandler(this.lblResEditorial_Click);
             // 
             // lblResLibro
             // 
@@ -263,7 +262,6 @@
             this.Controls.Add(this.gpbTodos);
             this.Name = "frmConsultar";
             this.Text = "Consultar datos";
-            this.Load += new System.EventHandler(this.frmConsultar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grlLibros)).EndInit();
             this.gpbTodos.ResumeLayout(false);
             this.gpbUno.ResumeLayout(false);

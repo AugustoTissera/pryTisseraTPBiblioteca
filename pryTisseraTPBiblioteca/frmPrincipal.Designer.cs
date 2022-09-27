@@ -30,10 +30,10 @@
         {
             this.msOperaciones = new System.Windows.Forms.MenuStrip();
             this.msGestion = new System.Windows.Forms.ToolStripMenuItem();
-            this.msConsulta = new System.Windows.Forms.ToolStripMenuItem();
-            this.msSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.msCargar = new System.Windows.Forms.ToolStripMenuItem();
             this.msModificar = new System.Windows.Forms.ToolStripMenuItem();
+            this.msConsulta = new System.Windows.Forms.ToolStripMenuItem();
+            this.msSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.msOperaciones.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,19 @@
             this.msGestion.Size = new System.Drawing.Size(59, 20);
             this.msGestion.Text = "Gestión";
             // 
+            // msCargar
+            // 
+            this.msCargar.Name = "msCargar";
+            this.msCargar.Size = new System.Drawing.Size(125, 22);
+            this.msCargar.Text = "Cargar";
+            this.msCargar.Click += new System.EventHandler(this.msCargar_Click);
+            // 
+            // msModificar
+            // 
+            this.msModificar.Name = "msModificar";
+            this.msModificar.Size = new System.Drawing.Size(125, 22);
+            this.msModificar.Text = "Modificar";
+            // 
             // msConsulta
             // 
             this.msConsulta.Name = "msConsulta";
@@ -70,19 +83,7 @@
             this.msSalir.Name = "msSalir";
             this.msSalir.Size = new System.Drawing.Size(41, 20);
             this.msSalir.Text = "Salir";
-            // 
-            // msCargar
-            // 
-            this.msCargar.Name = "msCargar";
-            this.msCargar.Size = new System.Drawing.Size(180, 22);
-            this.msCargar.Text = "Cargar";
-            this.msCargar.Click += new System.EventHandler(this.msCargar_Click);
-            // 
-            // msModificar
-            // 
-            this.msModificar.Name = "msModificar";
-            this.msModificar.Size = new System.Drawing.Size(180, 22);
-            this.msModificar.Text = "Modificar";
+            this.msSalir.Click += new System.EventHandler(this.msSalir_Click);
             // 
             // frmPrincipal
             // 
