@@ -21,17 +21,17 @@ namespace pryTisseraTPBiblioteca
             InitializeComponent();
             
 
-            if (File.Exists("./LIBRO.txt") == true) // Preguntamos si el archivo existe
+            if (File.Exists("LIBRO.txt") == true) // Preguntamos si el archivo existe
             {
                 
-                StreamReader srTodos = new StreamReader("./LIBRO.txt"); // Generamos la lectura del archivo principal
+                StreamReader srTodos = new StreamReader("LIBRO.txt"); // Generamos la lectura del archivo principal
                 
                 while (!srTodos.EndOfStream)
                 {
                     string[] vecLibro = srTodos.ReadLine().Split(',');
 
                     // Buscamos el código de editorial en su archivo y extraemos el nombre
-                    StreamReader srEditorial = new StreamReader("./EDITORIAL.txt");
+                    StreamReader srEditorial = new StreamReader("EDITORIAL.txt");
                     while (!srEditorial.EndOfStream)
                     {
                         
@@ -45,7 +45,7 @@ namespace pryTisseraTPBiblioteca
                     srEditorial.Close();
 
                     // Buscamos el código de distribuidor en su archivo y extraemos el nombre
-                    StreamReader srDistribuidor = new StreamReader("./DISTRIBUIDORA.txt");
+                    StreamReader srDistribuidor = new StreamReader("DISTRIBUIDORA.txt");
                     while (!srDistribuidor.EndOfStream)
                     {
                         string[] vecDistribuidor = srDistribuidor.ReadLine().Split(',');
@@ -70,12 +70,12 @@ namespace pryTisseraTPBiblioteca
             }
             else // Si no existe el archivo avisamos
             {
-                MessageBox.Show("ERROR", "Los archivos no se encuentran cargados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Los archivos no se encuentran cargados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            StreamReader srTodos = new StreamReader("./LIBRO.txt");
+            StreamReader srTodos = new StreamReader("LIBRO.txt");
 
             int i = 0;
             while (!srTodos.EndOfStream)
