@@ -56,6 +56,8 @@
             // 
             // grlLibros
             // 
+            this.grlLibros.AllowUserToAddRows = false;
+            this.grlLibros.AllowUserToDeleteRows = false;
             this.grlLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grlLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCodigo,
@@ -65,6 +67,7 @@
             this.colDistribuidor});
             this.grlLibros.Location = new System.Drawing.Point(6, 19);
             this.grlLibros.Name = "grlLibros";
+            this.grlLibros.ReadOnly = true;
             this.grlLibros.Size = new System.Drawing.Size(544, 220);
             this.grlLibros.TabIndex = 0;
             // 
@@ -72,26 +75,31 @@
             // 
             this.colCodigo.HeaderText = "Código";
             this.colCodigo.Name = "colCodigo";
+            this.colCodigo.ReadOnly = true;
             // 
             // colLibro
             // 
             this.colLibro.HeaderText = "Libro";
             this.colLibro.Name = "colLibro";
+            this.colLibro.ReadOnly = true;
             // 
             // colEditorial
             // 
             this.colEditorial.HeaderText = "Editorial";
             this.colEditorial.Name = "colEditorial";
+            this.colEditorial.ReadOnly = true;
             // 
             // colAutor
             // 
             this.colAutor.HeaderText = "Autor";
             this.colAutor.Name = "colAutor";
+            this.colAutor.ReadOnly = true;
             // 
             // colDistribuidor
             // 
             this.colDistribuidor.HeaderText = "Distribuidor";
             this.colDistribuidor.Name = "colDistribuidor";
+            this.colDistribuidor.ReadOnly = true;
             // 
             // gpbTodos
             // 
@@ -184,7 +192,7 @@
             // 
             this.lblResDistribuidor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblResDistribuidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResDistribuidor.Location = new System.Drawing.Point(94, 152);
+            this.lblResDistribuidor.Location = new System.Drawing.Point(94, 192);
             this.lblResDistribuidor.Name = "lblResDistribuidor";
             this.lblResDistribuidor.Size = new System.Drawing.Size(284, 23);
             this.lblResDistribuidor.TabIndex = 5;
@@ -193,7 +201,7 @@
             // 
             this.lblResAutor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblResAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResAutor.Location = new System.Drawing.Point(94, 112);
+            this.lblResAutor.Location = new System.Drawing.Point(94, 152);
             this.lblResAutor.Name = "lblResAutor";
             this.lblResAutor.Size = new System.Drawing.Size(284, 23);
             this.lblResAutor.TabIndex = 4;
@@ -202,7 +210,7 @@
             // 
             this.lblResEditorial.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblResEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResEditorial.Location = new System.Drawing.Point(94, 192);
+            this.lblResEditorial.Location = new System.Drawing.Point(94, 112);
             this.lblResEditorial.Name = "lblResEditorial";
             this.lblResEditorial.Size = new System.Drawing.Size(284, 23);
             this.lblResEditorial.TabIndex = 3;
