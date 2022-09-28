@@ -15,6 +15,7 @@ namespace pryTisseraTPBiblioteca
     {
         int i;
         int f = 0;
+        bool bandera = false;
         string[,] matLibro = new string[21, 5];
         public frmConsultar()
         {
@@ -80,20 +81,31 @@ namespace pryTisseraTPBiblioteca
             int i = 0;
             while (!srTodos.EndOfStream)
             {
-                if (i < 21) // Nos aseguramos que se mantenga en los rangos de la matríz, a trabajar...
+
+                if (bandera != true) // Evitamos que se repita la consulta en la grilla
                 {
-                    // Cargamos en la grilla los datos de la matríz
-                    grlLibros.Rows.Add(matLibro[i, 0],
-                    matLibro[i, 1],
-                    matLibro[i, 2],
-                    matLibro[i, 3],
-                    matLibro[i, 4]);
-                    i++;
+                    if (i < 21) // Nos aseguramos que se mantenga en los rangos de la matríz, a trabajar...
+                    {
+                        // Cargamos en la grilla los datos de la matríz
+                        grlLibros.Rows.Add(matLibro[i, 0],
+                        matLibro[i, 1],
+                        matLibro[i, 2],
+                        matLibro[i, 3],
+                        matLibro[i, 4]);
+                        i++;
+                    }
+                    else
+                    {
+                        bandera = true;
+                        break; // Una vez llegado al límite de la matríz, salimos del while
+                    }
                 }
                 else
                 {
-                    break; // Una vez llegado al límite de la matríz, salimos del while
+                    MessageBox.Show("Ya se han mostrdo todos los datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
                 }
+                
                 
             }
             srTodos.Close();
